@@ -6,6 +6,9 @@ import "./index.css";
 
 import { extendTheme } from "@chakra-ui/react";
 import { routeTree } from "./routeTree.gen";
+import { Provider } from "react-redux";
+import { persistor, store } from "./miscellaneous/redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 const router = createRouter({ routeTree });
 declare module "@tanstack/react-router" {
   interface Register {
@@ -24,15 +27,17 @@ const colors = {
 
 const theme = extendTheme({ colors });
 
-
-
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-    <ChakraProvider theme={theme}>
-        <RouterProvider router={router} />
+      <ChakraProvider theme={theme}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <RouterProvider router={router} />
+          </PersistGate>
+        </Provider>
       </ChakraProvider>
     </StrictMode>
   );
