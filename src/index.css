@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 html, body {
-  @apply h-full w-full; /* Ensure html and body take full height and width */
-  @apply antialiased; /* Improve font rendering */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  box-sizing: border-box; /* Apply border-box sizing model */
-  font-family: 'Inter', sans-serif; /* Example font, customize as needed */
+  @apply h-full w-full;
+  @apply antialiased;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
