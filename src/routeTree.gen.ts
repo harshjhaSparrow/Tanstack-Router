@@ -15,12 +15,19 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as Layout2Import } from './routes/_layout2'
 import { Route as LayoutImport } from './routes/_layout'
+import { Route as UserIndexImport } from './routes/user/index'
+import { Route as SettingsIndexImport } from './routes/settings/index'
 import { Route as PostsIndexImport } from './routes/posts.index'
+import { Route as UserUserIdImport } from './routes/user/$userId'
+import { Route as SettingsProfileImport } from './routes/settings/profile'
+import { Route as SettingsNotificationsImport } from './routes/settings/notifications'
 import { Route as PostsPostIdImport } from './routes/posts.$postId'
+import { Route as FilesSplatImport } from './routes/files/$'
 import { Route as StatusStatusImport } from './routes/_status/status'
 import { Route as Layout2ChildOfLayout2Import } from './routes/_layout2/ChildOfLayout2'
 import { Route as LayoutChildOfLayoutImport } from './routes/_layout/ChildOfLayout'
 import { Route as AboutAboutImport } from './routes/_about/about'
+import { Route as UserUseridEditImport } from './routes/user.$userid.edit'
 
 // Create Virtual Routes
 
@@ -43,13 +50,43 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
+const UserIndexRoute = UserIndexImport.update({
+  path: '/user/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingsIndexRoute = SettingsIndexImport.update({
+  path: '/settings/',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const PostsIndexRoute = PostsIndexImport.update({
   path: '/posts/',
   getParentRoute: () => rootRoute,
 } as any)
 
+const UserUserIdRoute = UserUserIdImport.update({
+  path: '/user/$userId',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingsProfileRoute = SettingsProfileImport.update({
+  path: '/settings/profile',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingsNotificationsRoute = SettingsNotificationsImport.update({
+  path: '/settings/notifications',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const PostsPostIdRoute = PostsPostIdImport.update({
   path: '/posts/$postId',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FilesSplatRoute = FilesSplatImport.update({
+  path: '/files/$',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -70,6 +107,11 @@ const LayoutChildOfLayoutRoute = LayoutChildOfLayoutImport.update({
 
 const AboutAboutRoute = AboutAboutImport.update({
   path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const UserUseridEditRoute = UserUseridEditImport.update({
+  path: '/user/$userid/edit',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -126,6 +168,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StatusStatusImport
       parentRoute: typeof rootRoute
     }
+    '/files/$': {
+      id: '/files/$'
+      path: '/files/$'
+      fullPath: '/files/$'
+      preLoaderRoute: typeof FilesSplatImport
+      parentRoute: typeof rootRoute
+    }
     '/posts/$postId': {
       id: '/posts/$postId'
       path: '/posts/$postId'
@@ -133,11 +182,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsPostIdImport
       parentRoute: typeof rootRoute
     }
+    '/settings/notifications': {
+      id: '/settings/notifications'
+      path: '/settings/notifications'
+      fullPath: '/settings/notifications'
+      preLoaderRoute: typeof SettingsNotificationsImport
+      parentRoute: typeof rootRoute
+    }
+    '/settings/profile': {
+      id: '/settings/profile'
+      path: '/settings/profile'
+      fullPath: '/settings/profile'
+      preLoaderRoute: typeof SettingsProfileImport
+      parentRoute: typeof rootRoute
+    }
+    '/user/$userId': {
+      id: '/user/$userId'
+      path: '/user/$userId'
+      fullPath: '/user/$userId'
+      preLoaderRoute: typeof UserUserIdImport
+      parentRoute: typeof rootRoute
+    }
     '/posts/': {
       id: '/posts/'
       path: '/posts'
       fullPath: '/posts'
       preLoaderRoute: typeof PostsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/settings/': {
+      id: '/settings/'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/user/': {
+      id: '/user/'
+      path: '/user'
+      fullPath: '/user'
+      preLoaderRoute: typeof UserIndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/user/$userid/edit': {
+      id: '/user/$userid/edit'
+      path: '/user/$userid/edit'
+      fullPath: '/user/$userid/edit'
+      preLoaderRoute: typeof UserUseridEditImport
       parentRoute: typeof rootRoute
     }
   }
@@ -151,8 +242,15 @@ export const routeTree = rootRoute.addChildren({
   Layout2Route: Layout2Route.addChildren({ Layout2ChildOfLayout2Route }),
   AboutAboutRoute,
   StatusStatusRoute,
+  FilesSplatRoute,
   PostsPostIdRoute,
+  SettingsNotificationsRoute,
+  SettingsProfileRoute,
+  UserUserIdRoute,
   PostsIndexRoute,
+  SettingsIndexRoute,
+  UserIndexRoute,
+  UserUseridEditRoute,
 })
 
 /* prettier-ignore-end */
@@ -168,8 +266,15 @@ export const routeTree = rootRoute.addChildren({
         "/_layout2",
         "/_about/about",
         "/_status/status",
+        "/files/$",
         "/posts/$postId",
-        "/posts/"
+        "/settings/notifications",
+        "/settings/profile",
+        "/user/$userId",
+        "/posts/",
+        "/settings/",
+        "/user/",
+        "/user/$userid/edit"
       ]
     },
     "/": {
@@ -201,11 +306,32 @@ export const routeTree = rootRoute.addChildren({
     "/_status/status": {
       "filePath": "_status/status.tsx"
     },
+    "/files/$": {
+      "filePath": "files/$.tsx"
+    },
     "/posts/$postId": {
       "filePath": "posts.$postId.tsx"
     },
+    "/settings/notifications": {
+      "filePath": "settings/notifications.tsx"
+    },
+    "/settings/profile": {
+      "filePath": "settings/profile.tsx"
+    },
+    "/user/$userId": {
+      "filePath": "user/$userId.tsx"
+    },
     "/posts/": {
       "filePath": "posts.index.tsx"
+    },
+    "/settings/": {
+      "filePath": "settings/index.tsx"
+    },
+    "/user/": {
+      "filePath": "user/index.tsx"
+    },
+    "/user/$userid/edit": {
+      "filePath": "user.$userid.edit.tsx"
     }
   }
 }
