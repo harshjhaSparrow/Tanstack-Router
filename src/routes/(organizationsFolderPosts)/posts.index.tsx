@@ -19,6 +19,12 @@ function PostsComponent() {
               <li key={post.id} className="whitespace-nowrap">
                 <Link
                   to="/posts/$postId"
+                  search={{
+                    query: 'tanstack',
+                  }}
+                  inactiveProps={{
+                  className:''
+                  }}
                   params={{ postId: post.id }}
                   className="block py-1 text-blue-600 hover:opacity-75"
                   activeProps={{ className: "font-bold underline" }}
