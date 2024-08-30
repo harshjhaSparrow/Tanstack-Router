@@ -1,13 +1,14 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../miscellaneous/hooks/hooks";
+
+import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
 import {
   decrement,
   increment,
-} from "../miscellaneous/redux/slices/exampleSlice";
+} from "../redux/slices/exampleSlice";
 
 const StatusPage: React.FC = () => {
-  const count = useAppSelector((state) => state.example.value); // Use the typed selector
-  const dispatch = useAppDispatch(); // Use the typed dispatch
+  const count = useAppSelector((state) => state.example.value); 
+  const dispatch = useAppDispatch(); 
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import { Link, Outlet, createFileRoute } from "@tanstack/react-router";
-import { fetchPosts } from "../../miscellaneous/functions/functions";
+import { fetchPosts } from "../../utils/common";
 
 export const Route = createFileRoute("/(organizationsFolderPosts)/posts/")({
   loader: fetchPosts,
@@ -8,6 +8,7 @@ export const Route = createFileRoute("/(organizationsFolderPosts)/posts/")({
 
 function PostsComponent() {
   const posts = Route.useLoaderData();
+  console.log('postpostss',posts)
 
   return (
     <div className="p-2 flex gap-2">

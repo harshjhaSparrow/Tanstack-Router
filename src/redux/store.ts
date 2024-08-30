@@ -2,7 +2,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { PersistConfig, persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import loggerMiddleware from '../middleware';
+import loggerMiddleware from './Middleware/middleware';
 import rootReducer from './rootreducers';
 
 // Define RootState type

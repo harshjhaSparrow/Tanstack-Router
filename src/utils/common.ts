@@ -1,4 +1,4 @@
-import { User } from '../types/types';
+import { User } from './types';
 export function fetchPosts() {
     const posts = Array.from({ length: 5 }, (_, index) => ({
       id: `post-${index + 1}`,

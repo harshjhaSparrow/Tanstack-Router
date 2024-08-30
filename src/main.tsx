@@ -5,10 +5,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 
 import { extendTheme } from "@chakra-ui/react";
-import { routeTree } from "./routeTree.gen";
+import { QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
-import { persistor, store } from "./miscellaneous/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "./redux/store";
+import queryClient from "./redux/useQuery/queryClient";
+import { routeTree } from "./routeTree.gen";
 const router = createRouter({ routeTree });
 declare module "@tanstack/react-router" {
   interface Register {
@@ -16,7 +18,7 @@ declare module "@tanstack/react-router" {
   }
 }
 
-// 2. Extend the theme to include custom colors, fonts, etc
+
 const colors = {
   brand: {
     900: "#1a365d",
@@ -32,13 +34,15 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <QueryClientProvider client={queryClient}> 
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <RouterProvider router={router} />
           </PersistGate>
         </Provider>
-      </ChakraProvider>
-    </StrictMode>
+      </QueryClientProvider>
+    </ChakraProvider>
+  </StrictMode>
   );
 }
