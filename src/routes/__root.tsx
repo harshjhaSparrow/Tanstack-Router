@@ -6,7 +6,7 @@ export const Route = createRootRoute({
     <>
       <div className="p-2 flex gap-2">
         <Link to="/" activeProps={{
-          className:'text-pink-200'
+          className:'font-bold'
         }} >
           Home
         </Link>

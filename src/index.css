@@ -4,8 +4,6 @@
 
 html, body {
   @apply h-full w-full; /* Ensure html and body take full height and width */
-  @apply text-gray-900; /* Set a default text color */
-  @apply bg-white; /* Set a default background color */
   @apply antialiased; /* Improve font rendering */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
