@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.html,body{
-    background-color: aquamarine;
+html, body {
+  @apply h-full w-full; /* Ensure html and body take full height and width */
+  @apply text-gray-900; /* Set a default text color */
+  @apply bg-white; /* Set a default background color */
+  @apply antialiased; /* Improve font rendering */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Apply border-box sizing model */
+  font-family: 'Inter', sans-serif; /* Example font, customize as needed */
 }
