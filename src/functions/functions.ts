@@ -1,5 +1,5 @@
 import { User } from '../types/types';
-export function fetchPosts(postId: any) {
+export function fetchPosts() {
     const posts = Array.from({ length: 5 }, (_, index) => ({
       id: `post-${index + 1}`,
       title: `Random Post Title ${index + 1}`,
