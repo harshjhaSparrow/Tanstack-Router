@@ -30,7 +30,7 @@ function PostsComponent() {
                   className="block py-1 text-blue-600 hover:opacity-75"
                   activeProps={{ className: "font-bold underline" }}
                 >
-                  <div>{post.title.substring(0, 20)}</div>
+                  <div className="flex justify-center">{post.title.substring(0, 20)}</div>
                 </Link>
               </li>
             );
