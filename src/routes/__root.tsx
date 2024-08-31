@@ -51,9 +51,10 @@ export const Route = createRootRoute({
         </Link>
       </div>
       <hr />
-      <div className=" h-screen m-1 w-full flex justify-center items-center">
+      <div className="h-screen w-full flex justify-center items-center">
         <Outlet />
       </div>
+
       <TanStackRouterDevtools />
     </>
   ),
