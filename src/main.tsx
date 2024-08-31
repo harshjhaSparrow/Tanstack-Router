@@ -27,7 +27,10 @@ const colors = {
   },
 };
 
+
+
 const theme = extendTheme({ colors });
+
 
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
