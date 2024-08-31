@@ -1,13 +1,13 @@
-import React from "react";
 import {
-  Tabs,
-  TabList,
-  TabPanels,
-  Tab,
-  TabPanel,
-  VisuallyHidden,
   Box,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  VisuallyHidden,
 } from "@chakra-ui/react";
+import React from "react";
 
 const AboutPage: React.FC = () => {
   return (
