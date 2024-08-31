@@ -20,7 +20,7 @@ import { Route as SettingsProfileImport } from './routes/settings/profile'
 import { Route as SettingsNotificationsImport } from './routes/settings/notifications'
 import { Route as FilesSplatImport } from './routes/files/$'
 import { Route as StatusStatusImport } from './routes/_status/status'
-import { Route as Layout2ChildOfLayout2Import } from './routes/_layout2/ChildOfLayout2'
+import { Route as Layout2ChildOfLayout3Import } from './routes/_layout2/ChildOfLayout3'
 import { Route as LayoutFurtherImport } from './routes/_layout.further'
 import { Route as LayoutChildOfLayout2Import } from './routes/_layout/ChildOfLayout2'
 import { Route as LayoutChildOfLayoutImport } from './routes/_layout/ChildOfLayout'
@@ -79,8 +79,8 @@ const StatusStatusRoute = StatusStatusImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const Layout2ChildOfLayout2Route = Layout2ChildOfLayout2Import.update({
-  path: '/ChildOfLayout2',
+const Layout2ChildOfLayout3Route = Layout2ChildOfLayout3Import.update({
+  path: '/ChildOfLayout3',
   getParentRoute: () => Layout2Route,
 } as any)
 
@@ -177,11 +177,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutFurtherImport
       parentRoute: typeof LayoutImport
     }
-    '/_layout2/ChildOfLayout2': {
-      id: '/_layout2/ChildOfLayout2'
-      path: '/ChildOfLayout2'
-      fullPath: '/ChildOfLayout2'
-      preLoaderRoute: typeof Layout2ChildOfLayout2Import
+    '/_layout2/ChildOfLayout3': {
+      id: '/_layout2/ChildOfLayout3'
+      path: '/ChildOfLayout3'
+      fullPath: '/ChildOfLayout3'
+      preLoaderRoute: typeof Layout2ChildOfLayout3Import
       parentRoute: typeof Layout2Import
     }
     '/_status/status': {
@@ -272,7 +272,7 @@ export const routeTree = rootRoute.addChildren({
     LayoutChildOfLayout2Route,
     LayoutFurtherRoute,
   }),
-  Layout2Route: Layout2Route.addChildren({ Layout2ChildOfLayout2Route }),
+  Layout2Route: Layout2Route.addChildren({ Layout2ChildOfLayout3Route }),
   AboutAboutRoute,
   StatusStatusRoute,
   FilesSplatRoute,
@@ -322,7 +322,7 @@ export const routeTree = rootRoute.addChildren({
     "/_layout2": {
       "filePath": "_layout2.tsx",
       "children": [
-        "/_layout2/ChildOfLayout2"
+        "/_layout2/ChildOfLayout3"
       ]
     },
     "/_about/about": {
@@ -340,8 +340,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_layout.further.tsx",
       "parent": "/_layout"
     },
-    "/_layout2/ChildOfLayout2": {
-      "filePath": "_layout2/ChildOfLayout2.tsx",
+    "/_layout2/ChildOfLayout3": {
+      "filePath": "_layout2/ChildOfLayout3.tsx",
       "parent": "/_layout2"
     },
     "/_status/status": {
