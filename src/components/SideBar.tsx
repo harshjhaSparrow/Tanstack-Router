@@ -17,22 +17,32 @@ const Sidebar = () => {
         {collapsed ? <Activity /> : <Activity />}
       </button>
       <nav className="flex-1 mt-4">
-        {navItems.map((item: any) => (
-          <div className={`flex items-center ${collapsed ? "center" : ""} `}>
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`nav-link w-full flex gap-4  sm rounded-xl text-[#9ca3af] hover:text-white hover:font-extrabold items-center p-3 py-4 hover:bg-[#3e6fff] ${collapsed ? "justify-center" : "justify-start"}`}
-            >
-              {item.icon && (
-                <div className={`text-sm ${collapsed ? "center" : ""}`}>
-                  <item.icon size={20} />
+        {navItems?.map((item: any) => (
+          <div
+            className={`flex gap-1 items-center ${collapsed ? "center" : ""} `}
+          >
+            <div className="py-1 w-full">
+              <Link
+                key={item.to}
+                activeProps={{
+                  className: "bg-[#3e6fff] py-1 text-white font-extrabold",
+                }}
+                activeOptions={{
+                  exact: true, // Match the exact path
+                }}
+                to={item.to}
+                className={`nav-link w-full flex gap-4  sm rounded-xl  hover:text-white hover:font-extrabold items-center p-3 py-4 hover:bg-[#3e6fff] ${collapsed ? "justify-center" : "justify-start"}`}
+              >
+                {item.icon && (
+                  <div className={`text-sm ${collapsed ? "center" : ""}`}>
+                    <item.icon size={20} />
+                  </div>
+                )}
+                <div className={`text-sm ${collapsed ? "hidden" : ""}`}>
+                  {item.label}
                 </div>
-              )}
-              <div className={`text-sm ${collapsed ? "hidden" : ""}`}>
-                {item.label}
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         ))}
       </nav>
