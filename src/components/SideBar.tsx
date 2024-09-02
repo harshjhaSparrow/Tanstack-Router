@@ -14,7 +14,7 @@ const Sidebar = () => {
       className={`sidebar  ${collapsed ? "w-20 px-2" : "px-3 w-64"} bg-[#111827]  text-white h-screen flex flex-col transition-all duration-300`}
     >
       <button
-        className="collapse-toggle center py-3 bg-[#111827] p-2 text-center border-b border-gray-600"
+        className="collapse-toggle center py-3  p-2 text-center border-b border-gray-600"
         onClick={() => dispatch(toggle(!collapsed))}
       >
         {collapsed ? <Activity /> : <Activity />}

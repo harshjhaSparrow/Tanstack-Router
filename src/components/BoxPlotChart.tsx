@@ -10,7 +10,7 @@ const BoxPlotChart = () => {
     plotOptions: {
       boxPlot: {
         colors: {
-          upper: '#FF0000', // Upper color
+          upper: '#111827', // Upper color
           lower: '#3e6fff'  // Lower color
         },
       }
