@@ -11,3 +11,8 @@ html, body {
   font-family: 'Inter', sans-serif;
   overflow: hidden;
 }
+
+
+.center {
+  @apply flex justify-center items-center;
+}
