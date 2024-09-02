@@ -1,10 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { navItems } from "../utils/contants";
 import { Activity } from "lucide-react";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
+import { toggle } from "../redux/slices/exampleSlice";
+import { navItems } from "../utils/contants";
 
 const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const dispatch = useAppDispatch();
+  const collapsed = useAppSelector((state: any) => state.example.collapsed);
 
   return (
     <div
@@ -12,7 +15,7 @@ const Sidebar = () => {
     >
       <button
         className="collapse-toggle center py-3 bg-[#111827] p-2 text-center border-b border-gray-600"
-        onClick={() => setCollapsed(!collapsed)}
+        onClick={() => dispatch(toggle(!collapsed))}
       >
         {collapsed ? <Activity /> : <Activity />}
       </button>
@@ -26,20 +29,26 @@ const Sidebar = () => {
                 key={item.to}
                 activeProps={{
                   className:
-                    "bg-[#3e6fff] hover:bg-[#949cb6] active:bg-[#3e6fff] py-1 text-white font-extrabold",
+                    "bg-primaryBlue hover:bg-[#949cb6] active:bg-primaryBlue py-1 text-white font-extrabold",
                 }}
                 activeOptions={{
-                  exact: true, // Match the exact path
+                  exact: true,
                 }}
                 to={item.to}
-                className={`nav-link w-full flex gap-4  sm rounded-xl  hover:text-white hover:font-extrabold items-center p-3 py-4 ${collapsed ? "justify-center" : "justify-start"}`}
+                className={`nav-link w-full flex gap-4 items-center rounded-xl p-2 sm:p-3 lg:p-4 py-2 sm:py-3 ${
+                  collapsed ? "justify-center" : "justify-start"
+                } hover:text-white hover:font-extrabold text-xs sm:text-sm lg:text-base`}
               >
                 {item.icon && (
-                  <div className={`text-sm ${collapsed ? "center" : ""}`}>
+                  <div
+                    className={`text-xs sm:text-sm lg:text-base ${collapsed ? "flex justify-center items-center" : ""}`}
+                  >
                     <item.icon size={20} />
                   </div>
                 )}
-                <div className={`text-sm ${collapsed ? "hidden" : ""}`}>
+                <div
+                  className={`text-xs sm:text-sm lg:text-base ${collapsed ? "hidden" : ""}`}
+                >
                   {item.label}
                 </div>
               </Link>

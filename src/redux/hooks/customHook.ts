@@ -2,7 +2,6 @@ import { useLocation } from "@tanstack/react-router";
 
 const usePageTitle = () => {
   const { pathname } = useLocation();
-
   const getTitle = () => {
     switch (pathname) {
       case "/":
@@ -25,7 +24,6 @@ const usePageTitle = () => {
         return "My Application";
     }
   };
-
   return getTitle();
 };
 

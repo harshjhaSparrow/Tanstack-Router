@@ -5,17 +5,14 @@ const ChartNotification: React.FC<any> = ({
   options: customOptions,
   series: customSeries,
   type = "bar",
-  width = "100%", // Make width responsive
-  height = "300", // Use a responsive height or adjust as needed
+  width = "400",
+  height = "300",
   colors = [],
   gradientColors = [],
 }) => {
   const defaultOptions = {
     chart: {
       id: "basic-bar",
-      toolbar: {
-        show: false, // Hide the default toolbar for a cleaner look
-      },
     },
     xaxis: {
       categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
@@ -34,33 +31,6 @@ const ChartNotification: React.FC<any> = ({
         stops: [0, 100], // Start and end points of the gradient
       },
     },
-    responsive: [
-      {
-        breakpoint: 600, // Adjust for small screens
-        options: {
-          chart: {
-            width: "100%", // Full width on small screens
-            height: "250", // Adjust height as needed
-          },
-          xaxis: {
-            labels: {
-              style: {
-                fontSize: '10px', // Adjust font size for smaller screens
-              },
-            },
-          },
-        },
-      },
-      {
-        breakpoint: 1024, // Adjust for medium screens
-        options: {
-          chart: {
-            width: "90%", // Slightly reduced width on medium screens
-            height: "300", // Adjust height as needed
-          },
-        },
-      },
-    ],
   };
 
   const defaultSeries = [

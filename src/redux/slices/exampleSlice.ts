@@ -1,16 +1,18 @@
 // src/redux/exampleSlice.ts
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 interface ExampleState {
   value: number;
+  collapsed: any;
 }
 
 const initialState: ExampleState = {
   value: 0,
+  collapsed: false,
 };
 
 const exampleSlice = createSlice({
-  name: 'example',
+  name: "example",
   initialState,
   reducers: {
     increment: (state) => {
@@ -19,8 +21,11 @@ const exampleSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    toggle: (state, value) => {
+      state.collapsed = value.payload;
+    },
   },
 });
 
-export const { increment, decrement } = exampleSlice.actions;
+export const { increment, decrement, toggle } = exampleSlice.actions;
 export default exampleSlice.reducer;
