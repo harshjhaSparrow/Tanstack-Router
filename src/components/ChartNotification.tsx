@@ -46,7 +46,7 @@ const ChartNotification: React.FC<any> = ({
 
   return (
     <div className="app">
-      <div className="row">
+      <div className="row text-center">
         <div className="mixed-chart">
           <Chart
             options={options}
