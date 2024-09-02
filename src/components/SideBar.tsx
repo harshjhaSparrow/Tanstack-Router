@@ -25,13 +25,14 @@ const Sidebar = () => {
               <Link
                 key={item.to}
                 activeProps={{
-                  className: "bg-[#3e6fff] py-1 text-white font-extrabold",
+                  className:
+                    "bg-[#3e6fff] hover:bg-[#949cb6] active:bg-[#3e6fff] py-1 text-white font-extrabold",
                 }}
                 activeOptions={{
                   exact: true, // Match the exact path
                 }}
                 to={item.to}
-                className={`nav-link w-full flex gap-4  sm rounded-xl  hover:text-white hover:font-extrabold items-center p-3 py-4 hover:bg-[#3e6fff] ${collapsed ? "justify-center" : "justify-start"}`}
+                className={`nav-link w-full flex gap-4  sm rounded-xl  hover:text-white hover:font-extrabold items-center p-3 py-4 ${collapsed ? "justify-center" : "justify-start"}`}
               >
                 {item.icon && (
                   <div className={`text-sm ${collapsed ? "center" : ""}`}>
