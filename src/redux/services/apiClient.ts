@@ -1,11 +1,32 @@
 // src/api/client.ts
-const API_URL = 'https://dummyjson.com';
+import axios from "axios";
 
+// Set the base URL using axios
+const API_URL = import.meta.env.VITE_API_URL || "https://dummyjson.com";
 
 export const fetchData = async (endpoint: string) => {
-  const response = await fetch(`${API_URL}/${endpoint}`);
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
+  try {
+    const response = await axios.get(`${API_URL}/${endpoint}`);
+    return response.data;
+  } catch (error: any) {
+    throw new Error(
+      `Error fetching data: ${error.response?.statusText || error.message}`
+    );
   }
-  return response.json();
+};
+
+
+export const postData = async (endpoint: string, data: any) => {
+  try {
+    const response = await axios.post(`${API_URL}/${endpoint}`, data, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (error: any) {
+    throw new Error(
+      `Error posting data: ${error.response?.statusText || error.message}`
+    );
+  }
 };
