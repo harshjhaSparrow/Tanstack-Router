@@ -42,6 +42,11 @@ const AboutPage: React.FC = () => {
             </p>
           </VisuallyHidden>
           <p>Some other visible content.</p>
+          <div className="center">
+
+          <button className="bg-pink py-3 w-20 border rounded-2xl">click here</button>
+
+          </div>
         </Box>
       </div>
     </>
