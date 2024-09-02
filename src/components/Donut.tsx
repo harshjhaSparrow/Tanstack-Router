@@ -10,7 +10,16 @@ const Donut: React.FC = () => {
   return (
     <div className="donut">
       <Chart
-        options={{ ...options, labels }} // Adding labels to options
+        options={{
+          ...options,
+          labels,
+          plotOptions: {
+            pie: {
+              customScale: 0.8,
+            },
+          },
+          
+        }} // Adding labels to options
         series={series}
         type="donut"
         width="380"

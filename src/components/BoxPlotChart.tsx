@@ -5,7 +5,7 @@ const BoxPlotChart = () => {
   const ApexOptions:any  = {
     chart: {
       type: 'boxPlot',
-      height: 350,
+      height: 300,
     },
     plotOptions: {
       boxPlot: {
