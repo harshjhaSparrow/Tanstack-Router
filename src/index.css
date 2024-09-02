@@ -12,6 +12,62 @@ html, body {
   overflow: hidden;
 }
 
+/* Hide scrollbar but allow scrolling */
+.scroll-container {
+  overflow: hidden; /* Hide scrollbar */
+  /* Allow scrolling with content */
+  overflow-y: scroll;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+/* Hide scrollbar but keep scrolling */
+.scroll-container {
+  overflow: scroll; /* Enable scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+/* Hide scrollbar but allow scrolling */
+.scroll-container {
+  position: relative;
+  overflow: auto; /* Enable scrolling */
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar width */
+  background: transparent; /* Transparent background */
+}
+
+.scroll-container {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* CustomScrollContainer.css */
+/* Hide scrollbar but allow scrolling */
+.scroll-container {
+  position: relative;
+  overflow: auto; /* Enable scrolling */
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar width */
+  background: transparent; /* Transparent background */
+}
+
+.scroll-container {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+
 
 .center {
   @apply flex justify-center items-center;

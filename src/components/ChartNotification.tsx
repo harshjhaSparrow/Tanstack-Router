@@ -17,7 +17,7 @@ const ChartNotification: React.FC<any> = ({
     xaxis: {
       categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
     },
-    colors: colors.length > 0 ? colors : ["#00E396"], // Use provided colors or default to a single color
+    colors: colors.length < 0 ? colors : "#3e6fff", // Use provided colors or default to a single color
     fill: {
       type: gradientColors.length > 0 ? "gradient" : "solid", // Use gradient if gradientColors are provided
       gradient: {

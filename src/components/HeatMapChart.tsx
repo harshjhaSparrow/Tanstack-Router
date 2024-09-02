@@ -1,7 +1,7 @@
 import ApexCharts from 'react-apexcharts';
 
-const HeatmapChart = () => {
-  const options:any = {
+const HeatmapChart: React.FC = () => {
+  const options = {
     chart: {
       height: 350,
       type: 'heatmap',
@@ -17,19 +17,19 @@ const HeatmapChart = () => {
               from: 0,
               to: 10,
               name: 'Low',
-              color: '#00A100'
+              color: '#00bcd4'
             },
             {
               from: 11,
               to: 20,
               name: 'Medium',
-              color: '#FFB200'
+              color: '#87ceeb'
             },
             {
               from: 21,
               to: 30,
               name: 'High',
-              color: '#FF0000'
+              color: '#ff6f61'
             }
           ]
         }
@@ -38,7 +38,7 @@ const HeatmapChart = () => {
     dataLabels: {
       enabled: true,
     },
-    colors: ['#00A100', '#FFB200', '#FF0000'],
+    colors: ['#00bcd4', '#87ceeb', '#ff6f61'],
     title: {
       text: 'Heatmap Chart',
     },
