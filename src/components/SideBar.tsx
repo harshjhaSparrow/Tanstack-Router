@@ -17,7 +17,21 @@ const Sidebar = () => {
         className="collapse-toggle center py-3  p-2 text-center border-b border-gray-600"
         onClick={() => dispatch(toggle(!collapsed))}
       >
-        {collapsed ? <Activity /> : <Activity />}
+        {collapsed ? (
+          <img
+            width={40}
+            height={40}
+            src="https://www.sparrowrms.in/infinity/wp-content/uploads/2020/12/sparrow-rms-logo.png"
+            alt=""
+          />
+        ) : (
+          <img
+            width={40}
+            height={40}
+            src="https://www.sparrowrms.in/infinity/wp-content/uploads/2020/12/sparrow-rms-logo.png"
+            alt=""
+          />
+        )}
       </button>
       <nav className="flex-1 mt-4">
         {navItems?.map((item: any) => (
@@ -29,13 +43,13 @@ const Sidebar = () => {
                 key={item.to}
                 activeProps={{
                   className:
-                    "bg-primaryBlue hover:bg-[#949cb6] active:bg-primaryBlue py-1 text-white font-extrabold",
+                    "bg-primaryBlue  active:bg-primaryBlue py-1 text-white font-extrabold",
                 }}
                 activeOptions={{
                   exact: true,
                 }}
                 to={item.to}
-                className={`nav-link w-full flex gap-4 items-center rounded-xl p-2 sm:p-3 lg:p-4 py-2 sm:py-3 ${
+                className={`nav-link w-full hover:bg-[#949cb6] flex gap-4 items-center rounded-xl p-2 sm:p-3 lg:p-4 py-2 sm:py-3 ${
                   collapsed ? "justify-center" : "justify-start"
                 } hover:text-white hover:font-extrabold text-xs sm:text-sm lg:text-base`}
               >
