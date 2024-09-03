@@ -13,7 +13,7 @@ const Donut: React.FC = () => {
         },
       },
     },
-    colors:  ["#3e6fff", "#00bcd4", "#87ceeb", "#ff6f61", "#333333"],
+    colors: ["#3e6fff", "#00bcd4", "#87ceeb", "#ff6f61", "#333333"],
     legend: {
       position: "bottom",
     },
@@ -28,8 +28,14 @@ const Donut: React.FC = () => {
   const [series] = useState([360, 55, 41, 17, 15]);
 
   return (
-    <div className="donut">
-      <Chart options={options} series={series} height={300} type="donut" width="380" />
+    <div className="donut center">
+      <Chart
+        options={options}
+        series={series}
+        height={300}
+        type="donut"
+        width="380"
+      />
     </div>
   );
 };

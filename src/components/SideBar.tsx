@@ -7,7 +7,7 @@ import { useToggleOnResize } from "../redux/hooks/customHook";
 const Sidebar = () => {
   const dispatch = useAppDispatch();
   const collapsed = useAppSelector((state: any) => state.example.collapsed);
-  useToggleOnResize(); // Hook is used to handle screen resize
+
   return (
     <div
       className={`sidebar  shadow-xl ${collapsed ? "w-20 px-2" : "px-3 w-72"} bg-[#111827]  text-white h-screen flex flex-col transition-all duration-300`}

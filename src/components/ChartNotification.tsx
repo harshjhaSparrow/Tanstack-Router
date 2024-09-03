@@ -5,7 +5,7 @@ const ChartNotification: React.FC<any> = ({
   options: customOptions,
   series: customSeries,
   type = "bar",
-  width = "400",
+  width = "300",
   height = "300",
   colors = [],
   gradientColors = [],
@@ -47,7 +47,7 @@ const ChartNotification: React.FC<any> = ({
   return (
     <div className="app">
       <div className="row text-center">
-        <div className="mixed-chart">
+        <div className="mixed-chart center">
           <Chart
             options={options}
             series={series}

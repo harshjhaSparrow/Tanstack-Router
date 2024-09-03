@@ -3,7 +3,7 @@ import ChartNotification from "../../components/ChartNotification";
 
 export const Route = createFileRoute("/settings/notifications")({
   component: () => (
-    <div>
+    <div className="center">
       <ChartNotification
         options={{
           chart: {

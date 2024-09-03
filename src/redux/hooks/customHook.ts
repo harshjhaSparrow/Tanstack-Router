@@ -30,26 +30,28 @@ export const usePageTitle = () => {
   return getTitle();
 };
 
-export const useToggleOnResize = () => {
-  const dispatch = useAppDispatch();
-  const collapsed = useAppSelector((state: any) => state.example.collapsed);
+export default usePageTitle;
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1300 && !collapsed) {
-        dispatch(toggle(true));
-      } else if (window.innerWidth >= 1300 && collapsed) {
-        dispatch(toggle(false));
-      }
-    };
+// export const useToggleOnResize = () => {
+//   const dispatch = useAppDispatch();
+//   const collapsed = useAppSelector((state: any) => state.example.collapsed);
 
-    // Initial check
-    handleResize();
+//   useEffect(() => {
+//     const handleResize = () => {
+//       if (window.innerWidth < 1300 && !collapsed) {
+//         dispatch(toggle(true));
+//       } else if (window.innerWidth >= 1300 && collapsed) {
+//         dispatch(toggle(false));
+//       }
+//     };
 
-    // Attach event listener
-    window.addEventListener("resize", handleResize);
+//     // Initial check
+//     handleResize();
 
-    // Clean up the event listener
-    return () => window.removeEventListener("resize", handleResize);
-  }, [dispatch, collapsed]);
-};
+//     // Attach event listener
+//     window.addEventListener("resize", handleResize);
+
+//     // Clean up the event listener
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, [dispatch, collapsed]);
+// };
