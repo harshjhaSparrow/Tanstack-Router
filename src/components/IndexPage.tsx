@@ -8,6 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import React from "react";
+import TableComponent from "./TableComponent";
 
 const IndexPage: React.FC = () => {
   return (
@@ -50,6 +51,9 @@ const IndexPage: React.FC = () => {
       <Button className="" colorScheme="ocean">
         Click Me
       </Button>
+      <div>
+        <TableComponent />
+      </div>
     </div>
   );
 };

@@ -1125,6 +1125,11 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz"
   integrity sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw==
 
+"@faker-js/faker@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.npmjs.org/@faker-js/faker/-/faker-8.4.1.tgz"
+  integrity sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==
+
 "@floating-ui/core@^1.6.0":
   version "1.6.7"
   resolved "https://registry.npmjs.org/@floating-ui/core/-/core-1.6.7.tgz"
@@ -1270,6 +1275,13 @@
     "@tanstack/store" "0.5.5"
     use-sync-external-store "^1.2.2"
 
+"@tanstack/react-table@^8.20.5":
+  version "8.20.5"
+  resolved "https://registry.npmjs.org/@tanstack/react-table/-/react-table-8.20.5.tgz"
+  integrity sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==
+  dependencies:
+    "@tanstack/table-core" "8.20.5"
+
 "@tanstack/router-devtools@^1.49.1":
   version "1.51.2"
   resolved "https://registry.npmjs.org/@tanstack/router-devtools/-/router-devtools-1.51.2.tgz"
@@ -1313,6 +1325,11 @@
   version "0.5.5"
   resolved "https://registry.npmjs.org/@tanstack/store/-/store-0.5.5.tgz"
   integrity sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==
+
+"@tanstack/table-core@8.20.5":
+  version "8.20.5"
+  resolved "https://registry.npmjs.org/@tanstack/table-core/-/table-core-8.20.5.tgz"
+  integrity sha512-P9dF7XbibHph2PFRz8gfBKEXEY/HJPOhym8CHmjF8y3q5mWpKx9xtZapXQUWCgkqvsK0R46Azuz+VaxD4Xl+Tg==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -1456,6 +1473,26 @@ acorn@^8.12.1:
   version "8.12.1"
   resolved "https://registry.npmjs.org/acorn/-/acorn-8.12.1.tgz"
   integrity sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==
+
+ag-charts-types@10.1.0:
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/ag-charts-types/-/ag-charts-types-10.1.0.tgz"
+  integrity sha512-pk9ft8hbgTXJ/thI/SEUR1BoauNplYExpcHh7tMOqVikoDsta1O15TB1ZL4XWnl4TPIzROBmONKsz7d8a2HBuQ==
+
+ag-grid-community@^32.1.0, ag-grid-community@32.1.0:
+  version "32.1.0"
+  resolved "https://registry.npmjs.org/ag-grid-community/-/ag-grid-community-32.1.0.tgz"
+  integrity sha512-RVvkjRH61nuCXwIqTKQPqNbKR+8cGBKw7S1qmmMXsy0pCBAJaQn4kL3v31hKHxDtV4bPscBXLFKGnKzHuss0GQ==
+  dependencies:
+    ag-charts-types "10.1.0"
+
+ag-grid-react@^32.1.0:
+  version "32.1.0"
+  resolved "https://registry.npmjs.org/ag-grid-react/-/ag-grid-react-32.1.0.tgz"
+  integrity sha512-GDbtvU3aicSajWXWxvQio5ZaPqJDx2jzgRBKQf1RF1IVzL+XATDmLFNuMND0+wJ/VW/xUjBFjiq9W1fjXg/DCA==
+  dependencies:
+    ag-grid-community "32.1.0"
+    prop-types "^15.8.1"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -2674,7 +2711,7 @@ react-clientside-effect@^1.2.6:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
-"react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.14.0, react-dom@>=18:
+"react-dom@^16.3.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0", react-dom@^18.0.0, react-dom@^18.2.0, react-dom@>=16.14.0, react-dom@>=16.8, react-dom@>=18:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -2762,7 +2799,7 @@ react-tooltip@^5.28.0:
     "@floating-ui/dom" "^1.6.1"
     classnames "^2.3.0"
 
-"react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^17.0.0 || ^18.0.0", "react@^18 || ^19", react@^18.0, react@^18.0.0, react@^18.2.0, react@>=0.13, react@>=16.14.0, react@>=16.8.0, react@>=18:
+"react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^17.0.0 || ^18.0.0", "react@^18 || ^19", react@^18.0, react@^18.0.0, react@^18.2.0, react@>=0.13, react@>=16.14.0, react@>=16.8, react@>=16.8.0, react@>=18:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==

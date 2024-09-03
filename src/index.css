@@ -67,6 +67,49 @@ html, body {
   -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
 }
 
+html {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+table {
+  border: 1px solid lightgray;
+}
+
+.ag-theme-alpine {
+  --ag-header-background-color: #f1f3f5;
+  --ag-odd-row-background-color: #f8f9fa;
+  --ag-border-color: #dee2e6;
+}
+
+.ag-theme-alpine .ag-header-cell {
+  font-weight: bold;
+  color: #495057;
+}
+
+.ag-theme-alpine .ag-cell {
+  padding: 10px;
+  font-size: 14px;
+}
+
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+}
+
+tfoot {
+  color: gray;
+}
+
+tfoot th {
+  font-weight: normal;
+}
 
 
 .center {

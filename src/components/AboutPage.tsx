@@ -8,6 +8,7 @@ import {
   VisuallyHidden,
 } from "@chakra-ui/react";
 import React from "react";
+import AgGridTable from "./AgGridTable";
 
 const AboutPage: React.FC = () => {
   return (
@@ -42,10 +43,10 @@ const AboutPage: React.FC = () => {
             </p>
           </VisuallyHidden>
           <p>Some other visible content.</p>
-          <div className="center">
-
-          <button className="bg-pink py-3 w-20 border rounded-2xl">click here</button>
-
+          <div className="">
+            <div className="h-[40vh] ag-theme-quartz overflow-scroll scroll-container">
+              <AgGridTable />
+            </div>
           </div>
         </Box>
       </div>
