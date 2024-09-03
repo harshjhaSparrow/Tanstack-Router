@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
 import { toggle } from "../redux/slices/exampleSlice";
 import { navItems } from "../utils/contants";
-import { useToggleOnResize } from "../redux/hooks/customHook";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
