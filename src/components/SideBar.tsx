@@ -1,17 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import { Activity } from "lucide-react";
-import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks/hooks";
 import { toggle } from "../redux/slices/exampleSlice";
 import { navItems } from "../utils/contants";
+import { useToggleOnResize } from "../redux/hooks/customHook";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
   const collapsed = useAppSelector((state: any) => state.example.collapsed);
-
+  useToggleOnResize(); // Hook is used to handle screen resize
   return (
     <div
-      className={`sidebar  ${collapsed ? "w-20 px-2" : "px-3 w-64"} bg-[#111827]  text-white h-screen flex flex-col transition-all duration-300`}
+      className={`sidebar  shadow-xl ${collapsed ? "w-20 px-2" : "px-3 w-72"} bg-[#111827]  text-white h-screen flex flex-col transition-all duration-300`}
     >
       <button
         className="collapse-toggle center py-3  p-2 text-center border-b border-gray-600"
@@ -43,13 +42,13 @@ const Sidebar = () => {
                 key={item.to}
                 activeProps={{
                   className:
-                    "bg-primaryBlue  active:bg-primaryBlue py-1 text-white font-extrabold",
+                    "bg-primaryBlue shadow-sm active:bg-primaryBlue  py-1 text-white font-extrabold",
                 }}
                 activeOptions={{
                   exact: true,
                 }}
                 to={item.to}
-                className={`nav-link w-full hover:bg-[#949cb6] flex gap-4 items-center rounded-xl p-2 sm:p-3 lg:p-4 py-2 sm:py-3 ${
+                className={`nav-link w-full text-[#DEDFE0] hover:bg-[#111827/90] flex gap-4 items-center rounded-xl p-2 sm:p-3 lg:p-4 py-2 sm:py-3 ${
                   collapsed ? "justify-center" : "justify-start"
                 } hover:text-white hover:font-extrabold text-xs sm:text-sm lg:text-base`}
               >

@@ -1,9 +1,9 @@
 import ApexCharts from 'react-apexcharts';
 
 const HeatmapChart: React.FC = () => {
-  const options = {
+  const options:any = {
     chart: {
-      height: 350,
+      height: 300,
       type: 'heatmap',
     },
     plotOptions: {

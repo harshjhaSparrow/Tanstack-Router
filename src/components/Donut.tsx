@@ -29,7 +29,7 @@ const Donut: React.FC = () => {
 
   return (
     <div className="donut">
-      <Chart options={options} series={series} type="donut" width="380" />
+      <Chart options={options} series={series} height={300} type="donut" width="380" />
     </div>
   );
 };

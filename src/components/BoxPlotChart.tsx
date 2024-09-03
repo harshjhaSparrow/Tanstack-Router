@@ -45,7 +45,7 @@ const BoxPlotChart = () => {
 
   return (
     <div className="boxplot-chart">
-      <ApexCharts options={ApexOptions} series={series} type="boxPlot" height={350} />
+      <ApexCharts options={ApexOptions} series={series} type="boxPlot" height={300} />
     </div>
   );
 };
